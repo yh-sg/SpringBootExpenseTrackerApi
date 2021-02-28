@@ -32,8 +32,8 @@ public class CatogoryServiceImpl implements CategoryService {
 
 	@Override
 	public Category addCategory(Integer userId, String title, String description) throws EtBadRequestException {
-		// TODO Auto-generated method stub
-		return null;
+		int categoryId = categoryRepository.create(userId, title, description);
+        return categoryRepository.findById(userId, categoryId);
 	}
 
 	@Override
